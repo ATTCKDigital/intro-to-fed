@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>ATTCK io</title>
+        <title>ATTCK.io - Intro to Front-End Development</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -41,39 +41,304 @@
             </div><!--/.nav-collapse -->
           </div>
         </nav>
-        
 
+        <header class="container">
+          <div class="page-header">
+            <h1>Intro to Front-End Development<br><small>Course Materials</small></h1>
+          </div>
+        </header>
 
-        <div class="container">
-            <div class="row">
-                <h1>Intro to Front-End Development</h1>
-                <h2>Course Materials</h2>
+        <section id="concepts" class="container">
+          <h3>How a Web Page Works</h3>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">The web page request process. </h3>
             </div>
-        </div>
+            <div class="panel-body">
+              <a href="images/how-web-pages-work.png">
+                <img class="img-responsive" src="images/how-web-pages-work.png" alt="">
+              </a>
+            </div>
+          </div>
+
+          <h3>Our 3 main technologies:</h3>
+
+          <ul>
+            <li>
+              <strong>HTML.</strong> Used to define the different pieces of content in your webpage and their relevance.
+            </li>
+            <li>
+              <strong>CSS.</strong> Used to define your webpage's appearance. <br>
+            </li>
+            <li>
+              <strong>JavaScript.</strong> Used to define your webpage's behavior. 
+            </li>
+          </ul>
+        </section>
+
+        <section id="html-concepts" class="container">
+          <h3>HTML Concepts</h3>
+
+          <p>HTML consists of a number of <strong>tags</strong> which define content. Tags are basically keywords with &lt; and &gt; around them.</p>
+
+          <div class="well">
+            <p><code>&lt;img&gt;</code>  &lt;-- this is a tag for defining images. </p>
+            <p><code>&lt;p&gt;</code>  &lt;-- this is a tag for defining paragraph text. </p>
+          </div>
+
+          <p>You don't always use tags by themselves. Most tags have optional <strong>attributes</strong>, which attach important information to the tags.</p>
+
+          <p>Many tags like <code>&lt;p&gt;</code> consist of an <strong>opening and closing tag.</strong>for example, to define a paragraph we need both a starting and ending tag: </p>
+
+          <div class="well">
+            <p><code>&lt;p&gt;This is the paragraph text.&lt;/p&gt;</code></p>  
+          </div>          
+
+          <p>Other tags like <code>&lt;br&gt;</code> (for line breaks) are called <strong>self-closing</strong>; that is, they don't need closing tags. </p>
+
+          <div class="well">
+            <p><code>This is one line.<br>This is another line. We don't need a closing tag. </code>  
+          </div>
+
+          <p>Tags are often <strong>nested.</strong> You can put them inside each other where appropriate.</p>
+
+          <div class="well">
+            <p><code>&lt;p&gt;This is the paragraph text,&lt;br&gt;with a line break inside it.&lt;/p&gt;</code></p>
+          </div>
+
+          <p>Tags contain <strong>attributes</strong>, which alter their behavior and appearance.</p>          
+          <div class="well">
+            <p><code>&lt;img src=&quot;my-image.png&quot;&gt;</code>  &lt;-- "src" is an attribute of the &lt;img&gt; tag. </p>
+          </div>
+
+        </section>
+
+        <section id="html-tags" class="container">
+          <h3>Essential HTML Tags</h3>
+
+          <p>These are most of the HTML tags that are most important and common. There are more, but get good with these first. </p>
+
+          <table class="table table-bordered table-striped">
+            <tbody>
+              <tr>
+                <th><code>&lt;!doctype html&gt;</code></th>
+                <td>
+                  <p>Goes at the very top of the page. Defines the type of document.</p>
+
+                  <p>For the most part you should never have to change this, just always include it.</p>
+                </td>
+              </tr>
+              <tr>
+                <th><code>&lt;html&gt;</code>...<code>&lt;/html&gt;</code></th>
+                <td>
+                  Defines the html document. Goes around everything except the &lt;!doctype&gt;
+                </td>
+              </tr>
+              <tr>
+                <th><code>&lt;head&gt;</code>...<code>&lt;/head&gt;</code></th>
+                <td>
+                  Contains non-visible information about the webpage, such as the title, stylesheets, and description for search engines. 
+                </td>
+              </tr>
+              <tr>
+                <th><code>&lt;title&gt;</code>...<code>&lt;/title&gt;</code></th>
+                <td>
+                  Contains the title of the webpage that will show up in the browser. 
+                </td>
+              </tr>
+              <tr>
+                <th><code>&lt;body&gt;</code>...<code>&lt;/body&gt;</code></th>
+                <td>
+                  Contains all the visible content of the page, and more. 
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <code>&lt;h1&gt;...&lt;/h1&gt;</code>,<br>
+                  <code>&lt;h2&gt;...&lt;/h2&gt;</code>,<br>
+                  <code>&lt;h3&gt;...&lt;/h3&gt;</code>,<br>
+                  <code>&lt;h4&gt;...&lt;/h4&gt;</code>,<br>
+                  <code>&lt;h5&gt;...&lt;/h5&gt;</code>,<br>
+                  <code>&lt;h6&gt;...&lt;/h6&gt;</code>
+                </th>
+                <td>
+                  <p>These wrap headings for different sections of the page.  </p>
+                  <p><code>&lt;h1&gt;</code> wraps the most important heading (usually the page's title). <code>&lt;h2&gt;</code> tags wrap sub-headings. </p>
+                  <p><code>&lt;h3&gt;</code> tags contain SUB-sub-headings.</p>
+
+                  <p>...and so on.</p>
+
+                  <div class="well">
+                    <h5>Example:</h5>
+                  
+                    <code>&lt;h1&gt;My Website.&lt;/h1&gt;</code><br>
+                    <code>&lt;h2&gt;Nothing but great things here.&lt;/h2&gt;</code>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th><code>&lt;p&gt;</code>...<code>&lt;/p&gt;</code></th>
+                <td>
+                  These contain paragraph text. 
+
+                  <div class="well">
+                    <h5>Example:</h5>
+                  
+                    <code>&lt;p&gt;First paragraph.&lt;/p&gt;</code><br>
+                    <code>&lt;p&gt;Second paragraph.&lt;/p&gt;</code>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th><code>&lt;img&gt;</code></th>
+                <td>
+                  Tags for displaying images. 
+
+                  The "src" attribute is required to show anything. 
+
+                  <div class="well">
+                    <h5>Example:</h5>
+                  
+                    <code>&lt;img src=&quot;my-image.jpg&quot;&gt;</code><br>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th><code>&lt;a&gt;</code>...<code>&lt;/a&gt;</code></th>
+                <td>
+                  <p>Anchor tags.</p>
+                  <p>These are used for linking (or "hyperlinking") to another webpage, or to another part of the same page.</p>
+
+                  <div class="well">
+                    <h5>Examples:</h5>
+                  
+                    <code>&lt;a href=&quot;http://attck.io&quot;&gt;Join our mailing list!&lt;/a&gt;</code><br>
+                    <code>&lt;a href=&quot;#about&quot;&gt;Link to about section.&lt;/a&gt;</code><br>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th><code>&lt;div&gt;</code>...<code>&lt;/div&gt;</code> and <code>&lt;span&gt;</code>...<code>&lt;/span&gt;</code></th>
+                <td>
+                  <p>Grouping Tags.</p>
+                  <p>Both define sections of content in a webpage. </p>
+                  <p><code>&lt;div&gt;</code> tags define "block" sections.</p>
+                  <p><code>&lt;span&gt;</code> tags define sections within a line ("inline" sections).</p>
+
+                  <div class="well">
+                    <h5>Examples:</h5>
+                  
+                    <code><br>
+                    &lt;div id=&quot;about&quot;&gt;<br>
+
+                    &lt;h2&gt;About Our Company&lt;/h2&gt;<br>
+                    &lt;p&gt;Bunch of text goes here. Inline elements may have &lt;span&gt;span&lt;/span&gt; tags around them.&lt;/p&gt;<br>
+
+                    &lt;/div&gt;</code><br>
+                    
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th><code>&lt;--</code> ... <code>--&gt;</code></th>
+                <td>
+                  <p>Comment tags.</p>
+                  <p>Anything between these tags is a "comment," or a note just for developers. It will not be seen in the web browser, only in the source code.  </p>
+                  
+                  <div class="well">
+                    <h5>Examples:</h5>
+                  
+                    <code><br>
+                    
+                    &lt;p&gt;You can see this text in a browser.&lt;/p&gt;<br>
+
+                    &lt;!-- This text is invisible. --&gt;</code><br>
+                    
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+        </section>
+
+        <section id="html-structure" class="container">
+          <h3>Standard HTML Page Structure</h3>
+
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;
+      title of the page here
+    &lt;/title&gt;
+    &lt;!-- Any stylesheet &lt;link&gt; tags go here. --&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    page contents here
+
+    &lt;!-- Any javascript &lt;script&gt; tags go here. --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+          
+        </section>
 
         <section id="glossary" class="container">
             <h3>Glossary of Terms</h3>
 
-            <table>
-                <thead>
-                    <caption>HTML Terms</caption>
-                </thead>
-                <tr>
-                    <th>Tag</th>
-                    <td>The basic unit of html programming. Tags look like this:<br /><code>&lt;tag-name-here&gt;</code></td>
-                </tr>
-                <tr>
-                    <th>Attribute</th>
-                    <td>Attributes are things you add to tags to alter their properties.<br /><code>&lt;tag-name-here attribute1=&quot;some value&quot;&gt;</code></td>
-                </tr>
-                <thead>
-                    <caption>CSS Terms</caption>
-                </thead>
-                <thead>
-                    <caption>JavaScript Terms</caption>
-                </thead>
+            <h4>HTML Terms</h4>
+            <table class="table table-bordered table-striped">
+                <tbody>
+                    <tr>
+                        <th>Tag</th>
+                        <td>
+
+                        <p>The basic unit of html programming. A tag defines the meaning and structure of a single part of a webpage. </p>
+
+
+                        Tags look like this:
+
+                        <code>&lt;tag-name-here&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Attribute</th>
+                        <td>Attributes are things you add to tags to alter their properties.<br /><code>&lt;tag-name-here attribute1=&quot;some value&quot;&gt;</code>
+
+                        </td>
+                    </tr>
+                </tbody>
             </table>
+
+            <h4>CSS Terms</h4>
+
+            <table class="table table-bordered table-striped">
+                <tbody>
+                    <tr>
+                        <th>Selector</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Declaration</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Property</th>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+
+            <h4>JavaScript Terms</h4>
         </section>
+        
+
+        
         
 
         <!-- build:js scripts/vendor.js -->
