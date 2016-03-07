@@ -112,6 +112,14 @@
             <p><code>&lt;img src=&quot;my-image.png&quot;&gt;</code>  &lt;-- "src" is an attribute of the &lt;img&gt; tag. </p>
           </div>
 
+          <p>Important to note: HTML tags and attributes are <strong>case insensitive.</strong> That means uppercase and lowercase don't really matter - BUT <strong>keep everything lowercase</strong> unless there's a real reason not to. </p>
+
+          <p>
+            So <code>&lt;body&gt;</code> is the same as <code>&lt;BODY&gt;</code> and <code>&lt;bOdY&gt;</code>.
+
+            But you should always write it as <code>&lt;body&gt;</code> since that's the standard practice.
+          </p>
+
         </section>
 
         <section id="html-tags" class="container">
@@ -250,7 +258,7 @@
                     <h5>Examples:</h5>
                   
                     <code><br>
-                    
+
                     &lt;p&gt;You can see this text in a browser.&lt;/p&gt;<br>
 
                     &lt;!-- This text is invisible. --&gt;</code><br>
@@ -261,7 +269,62 @@
             </tbody>
           </table>
 
+        </section>
 
+        <section id="html-global-attributes" class="container">
+          <h3>Common HTML Attributes</h3>
+          <p>There are a few attributes that can be applied to almost any tag. There are 2 that you will see very often:</p>
+
+          <table class="table table-bordered table-striped">
+            <tr>
+              <th><code>class</code></th>
+              <td>
+                <p>Assigns a css class to reference this element by.</p>
+                <p>You'll often use css classnames to style elements.</p>
+                <p>Classes can (and often do) apply to multiple elements at once.</p>
+
+                <div class="well">
+                  <h5>Example:</h5>
+
+                  <code><br>
+                    &lt;-- HTML code --&gt;<br>
+                    &lt;p class=&quot;blue-text&quot;&gt;This text will be blue.&lt;/p&gt;<br>
+                    &lt;p class=&quot;blue-text&quot;&gt;This text will also be blue.&lt;/p&gt;<br>
+                    &lt;p&gt;This text will not.&lt;/p&gt;<br>
+
+                    <br>
+
+                    &lt;-- CSS code --&gt;<br>
+                    .blue-text {
+                      color: blue;
+                    }
+                  </code>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th><code>id</code></th>
+              <td>
+                <p>Give an element an ID to refer to it directly.</p>
+                <p>IDs must be unique, just like any other ID - driver's license, etc.</p>
+                <p>These are often used with JavaScript, and sometimes with CSS.</p>
+
+                <code><br>
+                  &lt;-- HTML code --&gt;<br>
+                  &lt;a id=&quot;my-link&quot;&gt;Click me!&lt;/a&gt;<br>
+                  &lt;p id=&quot;my-text&quot;&gt;&lt;/p&gt;<br>
+                  &lt;p&gt;This text will not.&lt;/p&gt;<br>
+
+                  <br>
+
+                  &lt;-- CSS code --&gt;<br>
+                  .blue-text {
+                    color: blue;
+                  }
+                </code>
+              </td>
+            </tr>
+          </table>
         </section>
 
         <section id="html-structure" class="container">
@@ -286,6 +349,168 @@
           
         </section>
 
+        <section id="css-concepts" class="container">
+          <h3>CSS Concepts</h3>
+
+          <p>CSS stands for <strong>Cascading Style Sheets.</strong> It's the programming language you use for changing the appearance of your webpage - styling, layout, color, fonts, etc. It can also do advanced things like animation.</p>
+
+          <p>CSS is made up of little pieces of code called <strong>rules.</strong></p>
+
+          <p>A rule is made up of 2 main parts, a <strong>selector</strong> and a <strong>declaration,</strong> which is a list of <strong>style properties</strong> and <strong>values.</strong></p>
+
+          <p>That's a lot of terms, but it's not really complicated. Here's an example: </p>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">The parts of a CSS rule.</h3>
+            </div>
+            <div class="panel-body">
+              <a href="images/css-simple-rule.png">
+                <img class="img-responsive" src="images/css-simple-rule.png" alt="">
+              </a>
+            </div>
+          </div>
+
+          <p>What each piece does: </p>
+
+          <ul>
+            <li>
+              <strong>Selector:</strong>
+              Targets which HTML element (or elements) we want to style. Think of it as a way to "find" the element(s). 
+            </li>
+            <li>
+              <strong>Declaration: </strong>
+              Tells us how to style the element(s). Each property and value change the elements' appearance somehow. 
+            </li>
+          </ul>
+
+          <p>HTML elements have default <strong>display types</strong> which alter how some CSS properties affect them. There are a bunch, but the two types of display types you should be concerned with now are:
+
+            <ul>
+              
+              <li>
+              <p>
+
+              <strong>Inline</strong>. These are small elements that surround a piece of text that is part of something bigger. 
+              </p>
+
+              <p>
+                <code>&lt;span&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> are examples of elements that are inline by default. 
+              </p>
+
+              <p>Inline elements are not affected by CSS properties like <code>width</code>, <code>height</code>.</p>
+
+              </li>
+              <li>
+                <p>
+                  <strong>Block.</strong> Block elements can be affected by properties like <code>width</code> and <code>height</code>, and by default expand the full width of the page. 
+                </p>
+                <p>
+                  <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code> and the heading tags <code>&lt;h1&gt;</code>...<code>&lt;h6&gt;</code> are some elements that are block display by default. 
+                </p>
+
+              </li>
+            </ul>
+          </p>
+        </section>
+
+        <section id="css-properties" class="container">
+          <h3>Basic CSS Properties</h3>
+
+          <table class="table table-bordered table-striped">
+            <tr>
+              <th>
+                <code>color</code>
+              </th>
+              <td>
+                <p>Changes the color of the element. Duh.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <code>font-family</code>,<br>
+                <code>font-size</code>,<br>
+                <code>font-style</code>,<br>
+                <code>font-weight</code><br>
+              </th>
+              <td>
+                <p>
+                  These change various text properties of the element. 
+
+                  <div class="well">
+                    <h5>Examples: </h5>
+
+                    <code>
+                      h1 {<br>
+                        &nbsp;&nbsp;font-family: "Helvetica";<br>
+                        &nbsp;&nbsp;font-size: 40px;<br>
+                        &nbsp;&nbsp;font-style: italic;<br>
+                        &nbsp;&nbsp;font-weight: normal;<br>
+                      }
+                    </code>
+                  </div>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <code>background-color</code>,<br>
+                <code>background-image</code>,<br>
+                <code>background-repeat</code><br>
+              </th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>
+                <code>border-style</code>,<br>
+                <code>border-color</code>,<br>
+                <code>border-width</code>,<br>
+                <code>border</code>
+              </th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>
+                <code>margin-top</code>,<br>
+                <code>margin-right</code>,<br>
+                <code>margin-bottom</code>,<br>
+                <code>margin-left</code>,<br>
+                <code>margin</code>
+              </th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>
+                <code>padding-top</code>,<br>
+                <code>padding-right</code>,<br>
+                <code>padding-bottom</code>,<br>
+                <code>padding-left</code>,<br>
+                <code>padding</code>
+              </th>
+              <td></td>
+            </tr>
+          </table>
+        </section>
+
+        <section id="js-concepts" class="container">
+          <h3>JavaScript Concepts</h3>
+
+          <p>JavaScript is used to change the behavior of a webpage. </p>
+
+          <p>Often, things that happen when you click, type, or otherwise interact with a webpage can be changed with JavaScript. It can also do things on its own in the background. </p>
+
+          <p>Basic things you must learn about JavaScript:</p>
+
+          <ul>
+            <li>The <strong>DOM</strong>, or Document Object Model. The DOM is how JavaScript interacts with HTML elements. </li>
+
+            <li><strong>Events</strong>. When writing JavaScript that responds to a person's behavior in the browser, you do them in response to events - things like mouse clicks, mouse movement, typing, and so on. </li>
+
+            <li><strong>Variables</strong> are places to save information in your JavaScript code.</li>
+          </ul>
+        </section>
+
+<!-- 
         <section id="glossary" class="container">
             <h3>Glossary of Terms</h3>
 
@@ -335,11 +560,101 @@
             </table>
 
             <h4>JavaScript Terms</h4>
+
+            <table class="table table-bordered table-striped">
+                <tbody>
+                    <tr>
+                        <th>Selector</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Declaration</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Property</th>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </section> -->
+
+        <section id="tools" class="container">
+          <h3>Important Tools & Techniques</h3>
+
+          <table class="table table-bordered table-striped">
+            <tr>
+              <th>View Source</th>
+              <td>
+                <p>See the HTML source of a webpage. </p>
+                <p>Click <strong>View -> Page Source.</strong> (This may differ in other browsers.)</p>
+              </td>
+            </tr>
+            <tr>
+              <th>Inspect Element</th>
+              <td>
+                <p>Look at a single HTML element on the page, and all information about it. </p>
+                <p>Right-click, then click <strong>Inspect Element.</strong>  (This may differ in other browsers.)</p>
+              </td>
+            </tr>
+            <tr>
+              <th>JavaScript Console</th>
+              <td>
+                <p>In Chrome, go to <strong>View -> Developer -> JavaScript Console.</strong></p>
+                <p>Type in basic JavaScript commands here, and run them by pressing <strong>Enter.</strong> </p>
+                <p>Also, when you encounter JavaScript errors, they will show up here in the console.</p>
+              </td>
+            </tr>
+          </table>
         </section>
         
+        <section id="next-steps" class="container">
+          <h3>Next Steps & Homework</h3>
 
-        
-        
+          <h4>Build 3 Simple Webpages.</h4>
+
+          <p>If you're short on ideas, Jennifer Dewalt's 180 Websites (https://jenniferdewalt.com/) is a good source of inspiration.</p>
+
+          <h4>Create 3 Pens on Codepen.io.</h4>
+
+          <p>
+            Try to make it 3 different things from above. 
+          </p>
+
+          <h4>Expand Your Knowledge</h4>
+
+          <p>Learn a few more HTML tags, CSS properties, and JavaScript commands using the <a href="#references">references</a> below. </p>
+
+          <h4>Next Courses</h4>
+
+          <p>Get on the mailing list at <a href="http://attck.io">http://attck.io</a> if you haven't already. </p>
+
+          <p>The next courses you should consider taking are:
+            <ul>
+              <li>
+                <strong>HTML &amp; CSS In-Depth Fundamentals</strong> and
+              </li>
+              <li>
+                <strong>JavaScript In-Depth Fundamentals.</strong>
+              </li>
+            </ul>
+          </p>
+        </section>
+
+        <section id="references" class="container">
+          <h3>References</h3>
+
+          <p>Urls for learning more about the topics covered today. </p>
+
+          <ul>
+            <li><strong>Codepen:</strong> <a href="http://Codepen.io">Codepen.io</a></li>
+            <li><strong>Simple Website Ideas:</strong> <a href="jenniferdewalt.com">jenniferdewalt.com</a></li>
+            <li><strong>HTML Reference:</strong> <a href="http://www.w3schools.com/tags/">http://www.w3schools.com/tags/</a></li>
+            <li><strong>CSS Reference:</strong> <a href="http://www.w3schools.com/cssref/">http://www.w3schools.com/cssref/</a></li>
+            <li><strong>JavaScript Reference: </strong> <a href="http://www.w3schools.com/jsref/">http://www.w3schools.com/jsref/</a></li>
+          </ul>
+        </section>
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
