@@ -152,6 +152,11 @@ body {
 
 }
 
+div.page-break {
+   page-break-after: always; 
+   page-break-inside: avoid;    
+}
+
 // /* Table of contents */
 // .list-toc {
 //     // padding: 0;
